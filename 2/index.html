@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrackingIt - Revolutionize Your Logistics: Track Every Truck, Every Time.</title>
+  </head>
+  <body class="relative">
+
+    <!-- Header -->
+    <header 
+      class="absolute w-full border-b border-slate-150"
+      :class="openMobileNav ? 'bg-white' : 'bg-white/90'"
+      x-data="{ 
+        currentPath: '/2/',
+        openMobileNav: false,
+        navLinks: [
+          { text: 'Home', path: '/' },
+          { text: 'Page 1', path: '/2/' },
+          { text: 'Page 2', path: '/3/' },
+          { text: 'Page 3', path: '/4/' },
+        ]
+      }"
+    >
+        <div class="relative xl:container mx-auto flex flex-col lg:flex-row justify-between lg:items-center px-6">
+            <!-- Branding -->
+            <div>
+                <a href="/" class="flex items-center text-slate-900 py-5 lg:py-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"></path>
+                    </svg>
+                    <span class="pl-3 text-2xl font-bold">Tailstock</span>
+                </a>
+            </div>
+            <!-- End Navbar Header -->
+            <!-- Nav Links -->
+            <nav class="hidden lg:flex gap-5">
+              <template x-for="link in navLinks">
+                <div class="py-3 py-3 hover:text-blue-700 font-medium"
+                  :class="link.path === currentPath ? 'text-slate-950' : 'text-slate-500'"
+                >
+                    <a :href="link.path" class="inline-block py-2 min-w-20 text-center text-lg" x-text="link.text">
+                    </a>
+                </div>
+              </template>
+            </nav>
+
+            <!-- Nav Panel Links -->
+            <nav 
+                class="flex lg:hidden flex-col items-stretch pb-2 w-full"
+                :class="openMobileNav && 'pb-6'"
+                x-show="openMobileNav" 
+                @click.outside="openMobileNav = false"
+            >
+                  <template x-for="link in navLinks">
+                    <div 
+                      class="flex-1 hover:text-blue-700"
+                      :class="link.path === currentPath ? 'text-slate-900 font-medium' : 'text-slate-700'"
+                    >
+                      <a :href="link.path" class="inline-block py-2 px-4 w-full flex-1 text-lg" x-text="link.text"></a>
+                    </div>
+                  </template>
+            </nav>
+
+            <!-- Hamburger Menu -->
+            <button class="lg:hidden absolute top-6 right-6" x-show="!openMobileNav" @click="openMobileNav = !openMobileNav">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                </svg>
+            </button>
+            <!-- Cancel Button -->
+            <button class="lg:hidden absolute top-6 right-6" x-show="openMobileNav" @click="openMobileNav = !openMobileNav">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Navbar Content -->
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-center pt-40 pb-20 sm:py-48 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-6xl font-extrabold mb-8">
+          Page 2: Revolutionize Your Logistics: Track Every Truck, Every Time.
+        </h1>
+        <p class="text-xl sm:text-3xl mb-10">
+          Cut delays, optimize routes, and deliver on time with our all-in-one logistics platform.
+        </p>
+        <a href="#features" class="bg-white text-blue-500 px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-100">
+          Get Started Now
+        </a>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+    
+    <!-- Value Section -->
+    <section class="bg-white py-24 px-6" id="features">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+        <div class="flex flex-col justify-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">
+            Features That Transform Your Fleet Management
+          </h2>
+          <p class="text-lg sm:text-2xl text-gray-600">
+            Additional text explaining why you should care
+          </p>
+        </div>
+        <div class="space-y-6">
+          <!-- Feature 1 -->
+          <div class="flex items-center">
+            <div class="size-16 bg-blue-500 text-white rounded-full flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+              </svg>
+            </div>
+            <p class="ml-4 text-lg font-medium text-gray-800">Real-time GPS tracking for your entire fleet.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="flex items-center">
+            <div class="size-16 bg-blue-500 text-white rounded-full flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 9.75V10.5" />
+              </svg>
+            </div>
+            <p class="ml-4 text-lg font-medium text-gray-800">Intelligent route optimization to save fuel and time</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="flex items-center">
+            <div class="size-16 bg-blue-500 text-white rounded-full flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+              </svg>
+            </div>
+            <p class="ml-4 text-lg font-medium text-gray-800">Automated delivery updates to keep your customers informed</p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="flex items-center">
+            <div class="size-16 bg-blue-500 text-white rounded-full flex items-center justify-center shrink-0">
+              <svg class="size-8" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+              </svg>
+            </div>
+            <p class="ml-4 text-lg font-medium text-gray-800">Predictive maintenance alerts to minimize downtime</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Value Section -->
+    
+    <!-- Testimonials Section -->
+    <section class="bg-gray-100 py-16 sm:py-28 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-10">
+          Trusted by Thousands of Happy Customers
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between">
+            <p class="text-gray-600 text-base sm:text-lg mb-4">
+              "With TrackIt, we cut delivery delays by 35% in just two months. Our customers couldn't be happier!"
+            </p>
+            <div class="flex items-center justify-center">
+              <img src="/images/profile-1.jpg" alt="Avatar 1" class="w-12 h-12 rounded-full mr-4">
+              <div>
+                <h4 class="text-lg font-semibold">Jane Doe</h4>
+                <p class="text-sm text-gray-500">CEO, Startup Co.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between">
+            <p class="text-gray-600 text-base sm:text-lg mb-4">
+              "Excellent customer service and great tools. I recommend this to all my colleagues."
+            </p>
+            <div class="flex items-center justify-center">
+              <img src="/images/profile-2.jpg" alt="Avatar 2" class="w-12 h-12 rounded-full mr-4">
+              <div>
+                <h4 class="text-lg font-semibold">John Smith</h4>
+                <p class="text-sm text-gray-500">CTO, Tech Solutions</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between">
+            <p class="text-gray-600 text-base sm:text-lg mb-4">
+              "A seamless experience from start to finish. I can't imagine going back to our old system."
+            </p>
+            <div class="flex items-center justify-center">
+              <img src="/images/person-3.jpg" alt="Avatar 3" class="w-12 h-12 rounded-full mr-4">
+              <div>
+                <h4 class="text-lg font-semibold">Emma Brown</h4>
+                <p class="text-sm text-gray-500">Manager, Enterprise Inc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+    <!-- Benefits Section -->
+    <section class="bg-white py-20 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+          Why Choose Us?
+          <!-- Benefits You'll Love -->
+        </h2>
+        <p class="text-lg sm:text-2xl text-gray-600 mb-12">
+          Discover why our solution is the perfect fit for your needs.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Benefit 1 -->
+          <div>
+            <div class="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">Save Time and Money</h3>
+            <p class="text-gray-600 text-base sm:text-lg">
+              Spend less on fuel and maintenance while meeting tighter deadlines.
+            </p>
+          </div>
+          <!-- Benefit 2 -->
+          <div>
+            <div class="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">Improve Customer Satisfaction</h3>
+            <p class="text-gray-600 text-base sm:text-lg">
+              Deliver on time, every time, with automated notifications.
+            </p>
+          </div>
+          <!-- Benefit 3 -->
+          <div>
+            <div class="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6 9 12.75l4.286-4.286a11.948 11.948 0 0 1 4.306 6.43l.776 2.898m0 0 3.182-5.511m-3.182 5.51-5.511-3.181" />
+              </svg>
+              
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">Reduce Stress</h3>
+            <p class="text-gray-600 text-base sm:text-lg">
+              Gain full visibility and control over your operations, even on the go.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>    
+    <!-- End Benefits Section -->
+
+    <!-- CTA Section -->
+    <section class="bg-blue-700 text-white py-16 sm:py-32 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Ready to Take Control of Your Fleet?</h2>
+        <p class="text-xl sm:text-3xl mb-10">
+            Join thousands of businesses who trust us to streamline their fleet management.
+        </p>
+        <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold text-lg shadow-md hover:bg-gray-100 transition">
+            Get Started Today
+        </a>
+      </div>
+    </section>
+    <!-- End CTA Section -->
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-16 sm:py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-12 gap-10 mb-20">
+              <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                  <h5 class="text-base font-bold mb-4">Link Group 1</h5>
+                  <div class="flex flex-col gap-2.5">
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                  </div>
+              </div>
+  
+              <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                  <h5 class="text-base font-bold mb-4">Link Group 2</h5>
+                  <div class="flex flex-col gap-2.5">
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                  </div>
+              </div>
+  
+              <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                  <h5 class="text-base font-bold mb-4">Link Group 3</h5>
+                  <div class="flex flex-col gap-2.5">
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                  </div>
+              </div>
+  
+              <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                  <h5 class="text-base font-bold mb-4">Link Group 4</h5>
+                  <div class="flex flex-col gap-2.5">
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                      <a href="#" class="text-slate-50 hover:text-blue-300 text-lg">
+                          Get Started Today
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="text-center">
+              <p>&copy; 2024 Tailstock. All Rights Reserved.</p>
+          </div>
+          
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
