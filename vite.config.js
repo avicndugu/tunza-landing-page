@@ -1,6 +1,4 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import {ViteEjsPlugin} from "vite-plugin-ejs";
 
 export default defineConfig({
     build: {
@@ -13,7 +11,5 @@ export default defineConfig({
             },
         },
     },
-    plugins: [
-        ViteEjsPlugin(), // Process all HTML files using EJS
-    ],
+    plugins: [],
 });
